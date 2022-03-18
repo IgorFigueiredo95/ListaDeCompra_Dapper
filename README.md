@@ -27,4 +27,14 @@ A aplicação foi dividida em quatro partes com diferentes responsabilidades:<br
 <dd>Responsável em armazenar as classes utilizadas como models para o mapping do Dapper e armazenar as entidades principais da aplicação.</dd>
 </dl>
 
-A comunicação entre responsabilidades é feita através de interfaces com objetivo 
+<h1>Layouts</h1> 
+<h3>Tela principal</h3>
+![Tela principal](https://user-images.githubusercontent.com/96360281/158928527-4f083358-b8b2-4a66-ae17-bbf924564f6e.png)
+Tela de cadastro ou acesso ao usuário.
+<br>
+<h3> Tela principal Logada</h3>
+![image](https://user-images.githubusercontent.com/96360281/158929954-e06cba6d-bb44-46a0-bdba-fecd06d240ed.png)
+
+
+
+
