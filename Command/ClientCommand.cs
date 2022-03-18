@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ListaDeCompraDapper.Command.Data_Validation;
-using ListaDeCompraDapper.DB;
 using ListaDeCompraDapper.Model.Cliente;
 using ListaDeCompraDapper.Repository;
 
