@@ -31,7 +31,7 @@ A aplicação foi dividida em quatro partes com diferentes responsabilidades:<br
 <h3>Tela principal</h3>
 <img src="https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_Principal.PNG" alt="Tela principal" width=70%>
 
-<h3> Tela principal Logada</h3>
+<h3> Tela Logada</h3>
 <img src="https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_logada.PNG" alt="Tela logada" width=70%>
 
 
