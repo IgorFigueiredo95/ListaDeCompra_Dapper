@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\Assets\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>
