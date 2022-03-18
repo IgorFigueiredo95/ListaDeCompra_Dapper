@@ -29,11 +29,11 @@ A aplicação foi dividida em quatro partes com diferentes responsabilidades:<br
 
 <h1>Layouts</h1> 
 <h3>Tela principal</h3>
-![Tela principal](https://user-images.githubusercontent.com/96360281/158928527-4f083358-b8b2-4a66-ae17-bbf924564f6e.png)
+![Tela principal](https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_Principal.PNG)
 Tela de cadastro ou acesso ao usuário.
 <br>
 <h3> Tela principal Logada</h3>
-![image](https://user-images.githubusercontent.com/96360281/158929954-e06cba6d-bb44-46a0-bdba-fecd06d240ed.png)
+![image](https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_logada.PNG)
 
 
 
