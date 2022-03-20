@@ -13,25 +13,25 @@ namespace ListaDeCompraDapper.Model.Cliente
     {
         public Client(int id, string nome, string sobrenome, string endereco, string email)
         {
-            this.id = id;
-            this.nome = nome;
-            this.sobrenome = sobrenome;
-            this.endereco = endereco;
-            this.email = email;
+            Id = id;
+            Nome = nome;
+            Sobrenome = sobrenome;
+            Endereco = endereco;
+            Email = email;
         }
         public Client(string nome, string sobrenome, string endereco, string email)
         {
-            this.nome = nome;
-            this.sobrenome = sobrenome;
-            this.endereco = endereco;
-            this.email = email;
+            Nome = nome;
+            Sobrenome = sobrenome;
+            Endereco = endereco;
+            Email = email;
         }
 
 
-        public int id { get; set; }
-        public string nome{ get; set; }
-        public string sobrenome { get; set; }
-        public string endereco { get; set; }
-        public string email { get; set; }
+        public int Id { get; set; }
+        public string Nome{ get; set; }
+        public string Sobrenome { get; set; }
+        public string Endereco { get; set; }
+        public string Email { get; set; }
     }
 }

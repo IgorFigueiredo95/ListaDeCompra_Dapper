@@ -26,7 +26,7 @@ namespace ListaDeCompraDapper.Model.Produto
         }
 
 
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public int Id_cliente { get; set; }

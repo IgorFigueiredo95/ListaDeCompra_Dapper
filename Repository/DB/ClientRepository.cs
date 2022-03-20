@@ -35,20 +35,20 @@ namespace ListaDeCompraDapper.DB
                 using (var connection = Context.GetConnection())
                 {
 
-                    var isExistValidation = await GetClientRepo(client.email);
+                    var isExistValidation = await GetClientRepo(client.Email);
                     // conforme conversado com Kevão, pode chamar o metodo. Valida se já não foi cadastrado anteriormente
                     var transaction = connection.BeginTransaction();
 
                     if (isExistValidation == null)
                     {
-                        var result = await connection.QueryAsync<int>(SqlInsert, new { name = client.nome, surname = client.sobrenome, address = client.endereco, email = client.email }, transaction);//, transaction: insertTransaction É usado Execute async pois ele retorna o número de colunas afetadas. o Query async espera retornar a pesquisa desejada. Simplificando, query Async é para select e execute é para insert, delete e update
+                        var result = await connection.QueryAsync<int>(SqlInsert, new { name = client.Nome, surname = client.Sobrenome, address = client.Endereco, email = client.Email }, transaction);//, transaction: insertTransaction É usado Execute async pois ele retorna o número de colunas afetadas. o Query async espera retornar a pesquisa desejada. Simplificando, query Async é para select e execute é para insert, delete e update
                         transaction.Commit();
 
                         return (result.FirstOrDefault(), true);
                     }
                     else
                     {
-                        return (isExistValidation.id, false) ;
+                        return (isExistValidation.Id, false) ;
                     }
 
                 }

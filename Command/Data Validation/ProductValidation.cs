@@ -17,29 +17,29 @@ namespace ListaDeCompraDapper.Command.Data_Validation
         }
         public async Task<GenericCommandResult> ValidateAll()
         {
-            bool ValidData = true;
+            bool isValidData = true;
             List<String> ValidationError = new List<string>();
 
             #region Data Validation
             
-            if (String.IsNullOrEmpty(Product.Nome))
+            if (String.IsNullOrEmpty(Product.Nome) & Product.Nome.Length > 30)// 30 é o tamanho do varchar no DB
             {
                 ValidationError.Add("O nome do produto é inválido");
-                ValidData = false;
+                isValidData = false;
             }
-            if (String.IsNullOrEmpty(Product.Descricao))
+            if (String.IsNullOrEmpty(Product.Descricao) & Product.Descricao.Length > 70)
             {
                 ValidationError.Add("A descrição do produto é inválida");
-                ValidData = false;
+                isValidData = false;
             }
             if (Product.Id_cliente == null)
             {
                 ValidationError.Add("Nenhum id de cliente associado ao produto");
-                ValidData = false;
+                isValidData = false;
             }
             #endregion
 
-            if (ValidData == true)
+            if (!isValidData)
             {
                 return new GenericCommandResult(true, "Valores inseridos válidos", null);
             }

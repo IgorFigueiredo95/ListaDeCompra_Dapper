@@ -23,30 +23,36 @@ namespace ListaDeCompraDapper.Command.Data_Validation
 
             #region Validation data
 
-            if (String.IsNullOrEmpty(Client.nome))
+            if (String.IsNullOrEmpty(Client.Nome) || Client.Nome.Length >30)
             {
                 ValidationError.Add("O nome inserido é inválido, informe outro nome.");
                 ValidData = false;
             }
 
-            if (String.IsNullOrEmpty(Client.sobrenome))
+            if (String.IsNullOrEmpty(Client.Sobrenome) || Client.Sobrenome.Length > 30)
             {
                 ValidationError.Add("O sobrenome inserido é inválido, informe outro sobrenome.");
                 ValidData = false;
             }
-            if (String.IsNullOrEmpty(Client.endereco))
+            if (String.IsNullOrEmpty(Client.Endereco) || Client.Endereco.Length > 40)
             {
                 ValidationError.Add("O Endereço inserido é inválido, informe outro Endereço.");
                 ValidData = false;
             }
 
-            string[] EmailValidation = Client.email.Split('@');
-            
+            string[] EmailValidation = Client.Email.Split('@');
+           
 
             if (EmailValidation.Length == 1 || EmailValidation.Length > 2)// a validação não está completa, caracteres especiais passariam por essa validação
             {
                 ValidationError.Add("O email inserido é inválido, informe outro email.");
                 
+                ValidData = false;
+            }
+            else if(Client.Email.Length > 40)
+            {
+                ValidationError.Add("O email inserido é muito grande, informe outro email.");
+
                 ValidData = false;
             }
             #endregion

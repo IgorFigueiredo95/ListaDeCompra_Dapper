@@ -30,7 +30,7 @@ namespace ListaDeCompraDapper.Command
         }
         public async Task<GenericCommandResult> SaveProduct(Product Product, Client Client)
         {
-            Product.Id_cliente = Client.id;
+            Product.Id_cliente = Client.Id;
             Validation = new ProductValidation(Product);
             var IsValid = await Validation.ValidateAll();
 

@@ -22,7 +22,7 @@ namespace ListaDeCompraDapper.DB
         public async Task<List<Product>> GetProductRepo(Client client)
         {
             string SqlSelect = "SELECT nome, descricao, id_cliente, dataAdicionado  FROM PRODUTOS WHERE id_cliente = @idCliente";
-            var result = await Context.GetConnection().QueryAsync<Product>(SqlSelect, new { idCliente = client.id });
+            var result = await Context.GetConnection().QueryAsync<Product>(SqlSelect, new { idCliente = client.Id });
             return result.ToList();
         }
         public async Task<int> SaveProductRepo(Product product)
@@ -37,8 +37,8 @@ namespace ListaDeCompraDapper.DB
                     var result = await connection.QueryAsync<int>(SqlInsert, new { nome = product.Nome, descricao = product.Descricao, id_cliente = product.Id_cliente, dataAdicionado = product.DataAdicionado }, transaction);
                     transaction.Commit();
 
-                    product.id = result.FirstOrDefault();
-                    return product.id;
+                    product.Id = result.FirstOrDefault();
+                    return product.Id;
                 }
                 catch (Exception ex)
                 {

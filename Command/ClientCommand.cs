@@ -42,7 +42,7 @@ namespace ListaDeCompraDapper.Command
                 if (res.success == false)
                 {
                     List<string> error = new List<string>();
-                    error.Add($"O email {Client.email} já está cadastrado no sistema.");
+                    error.Add($"O email {Client.Email} já está cadastrado no sistema.");
                     return new GenericCommandResult(false, "Cliente já cadastrado no sistema.", error);
                 }
                 else

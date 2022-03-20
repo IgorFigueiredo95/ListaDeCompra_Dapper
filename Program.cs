@@ -169,7 +169,7 @@ namespace ListaDeCompraDapper
             string[] Header = { "Nome", "Descrição", "Data Adicionado" };
             Context loggedContext = new Context();
             ProductCommand productCommand = new ProductCommand(new ProductRepository(loggedContext));
-            Menu loggedMenu = new Menu(LoggedOptions, Prompt, Client.email);
+            Menu loggedMenu = new Menu(LoggedOptions, Prompt, Client.Email);
             int loggedSelectedOption = loggedMenu.Run();
 
 
@@ -181,12 +181,12 @@ namespace ListaDeCompraDapper
 
                     var result = await productCommand.GetProduct(Client);
                     List<Product> itens = (List<Product>)result.Data;
-                    ListProductMenu listProductMenu = new ListProductMenu(itens, Prompt, Client.email,Header);
+                    ListProductMenu listProductMenu = new ListProductMenu(itens, Prompt, Client.Email,Header);
                     Console.Clear();
 
                     if (itens.Count == 0)
                     {
-                        Menu emptyMenu = new Menu(new string[] {"Nenhum produto cadastrado para o usuário"}, "Pressione ENTER para continuar", Client.email);
+                        Menu emptyMenu = new Menu(new string[] {"Nenhum produto cadastrado para o usuário"}, "Pressione ENTER para continuar", Client.Email);
                         emptyMenu.Run();
                         Console.Clear();
                         loggedSelectedOption = loggedMenu.Run();
@@ -203,7 +203,7 @@ namespace ListaDeCompraDapper
                 {
                     RecordMenu CadProdMenu = new RecordMenu(CadProdPrompt);
                     List<string> data = CadProdMenu.Run();
-                    var result = await productCommand.SaveProduct(new Product(data[0], data[1], Client.id), Client);
+                    var result = await productCommand.SaveProduct(new Product(data[0], data[1], Client.Id), Client);
 
                     if (result.Success == false)//para refatoração, transformar em metodo de exibição de erros.
                     {
