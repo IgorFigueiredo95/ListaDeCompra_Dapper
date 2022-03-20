@@ -15,6 +15,7 @@ namespace ListaDeCompraDapper.Command
         public ClientCommand(IClientRepository clientRepository)
         {
             ClientRepository = clientRepository;
+            Validation = new ClientValidation(Client);
         }
 
         public async Task<GenericCommandResult> GetClient(string email)
@@ -32,7 +33,7 @@ namespace ListaDeCompraDapper.Command
         }
         public async Task<GenericCommandResult> SaveClient(Client Client)
         {
-            Validation = new ClientValidation(Client);
+
             var IsValid = await Validation.ValidateAll();
 
             (int id, bool success) res = await ClientRepository.SaveClientRepo(Client);
