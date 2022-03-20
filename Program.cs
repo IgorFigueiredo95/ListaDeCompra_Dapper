@@ -166,6 +166,7 @@ namespace ListaDeCompraDapper
             string[] LoggedOptions = { "Consultar lista de compras", "Cadastrar produto", "Deslogar do usuário", "Sair" };
             string Prompt = "Selecione utilizando as setas do teclado a opção desejada e tecle ENTER";
             string[] CadProdPrompt = { "Informe o nome do produto:", "Informe uma descrição para o item:" };
+            string[] Header = { "Nome", "Descrição", "Data Adicionado" };
             Context loggedContext = new Context();
             ProductCommand productCommand = new ProductCommand(new ProductRepository(loggedContext));
             Menu loggedMenu = new Menu(LoggedOptions, Prompt, Client.email);
@@ -180,7 +181,7 @@ namespace ListaDeCompraDapper
 
                     var result = await productCommand.GetProduct(Client);
                     List<Product> itens = (List<Product>)result.Data;
-                    ListProductMenu listProductMenu = new ListProductMenu(itens, Prompt, Client.email);
+                    ListProductMenu listProductMenu = new ListProductMenu(itens, Prompt, Client.email,Header);
                     Console.Clear();
 
                     if (itens.Count == 0)

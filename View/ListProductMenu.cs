@@ -13,13 +13,16 @@ namespace ListaDeCompraDapper.View
         private int SelectIndex;
         private string Prompt;
         private string LoggedEmail = "";
+        private const int ColumnSize = -30;
+        private string[] Headers = new string[3];
 
-        public ListProductMenu(List<Product> products, string prompt, string email)
+        public ListProductMenu(List<Product> products, string prompt, string email, string[] headers)
         {
             Products = products;
             Prompt = prompt;
             SelectIndex = 0;
             LoggedEmail = email;
+            Headers = headers;
         }
 
         private void DisplayMenu()
@@ -27,33 +30,45 @@ namespace ListaDeCompraDapper.View
                 DisplayTitle(LoggedEmail);
 
             Console.WriteLine($"{Prompt} \n");
-            string selection;
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"  |{Headers[0],ColumnSize} | {Headers[1],ColumnSize} | {Headers[2],ColumnSize}|");
             var ProductsArray = Products.ToArray();
+            string selection;
+
             for (int i = 0; i < ProductsArray.Length; i++)
             {
-                string currentOption = $"{ProductsArray[i].Nome} {ProductsArray[i].Descricao} {ProductsArray[i].DataAdicionado}";
+                string prodName = ReturnValidSize(ProductsArray[i].Nome, ColumnSize);
+                string prodDescription = ReturnValidSize(ProductsArray[i].Descricao, ColumnSize);
+
+                string currentOption = $"{prodName,ColumnSize} | {prodDescription,ColumnSize} | {ProductsArray[i].DataAdicionado,ColumnSize}|";
+
+
                 if (i == SelectIndex)
                 {
-                    selection = "*";
+                    selection = "=>";
                     Console.BackgroundColor = ConsoleColor.Gray;// altera cor do fundo
                     Console.ForegroundColor = ConsoleColor.Black;// alterar cor do texto
 
                 }
                 else
                 {
-                    selection = " ";
+                    selection = "  ";
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.White;
                 }
 
-                Console.WriteLine($" {selection} {currentOption} ");
+                Console.WriteLine($"{selection}|{currentOption}");
                 Console.ResetColor();
 
             }
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"  |{"",ColumnSize} | {"",ColumnSize} | {"",ColumnSize}|");
+            Console.ResetColor();
         }
         public int Run()
         {
-
 
             ConsoleKeyInfo LoggedKeyPressed;
             var ProductsArray = Products.ToArray();
@@ -84,5 +99,25 @@ namespace ListaDeCompraDapper.View
             return SelectIndex;
 
         }
+        private string ReturnValidSize(string data, int size)
+        {
+            size = Math.Abs(size);
+            int sizeData = data.Length;
+            string output="";
+            if (sizeData > size)
+            {
+                for (int i = 0; i < size-3; i++)
+                {
+                    output += data[i];
+                }
+                output += "...";
+            }
+            else
+            {
+                output = data;
+            }
+            return output;
+        }
+        
     }
 }
