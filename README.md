@@ -1,6 +1,13 @@
 # ListaDeCompra_Dapper
 #Estudo - Aplicação para controle de lista de compras  por usuário utilizando Dapper
 
+<h1>Layouts</h1> 
+<h3>Tela principal</h3>
+<img src="https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_Principal.PNG" alt="Tela principal" width=60%>
+
+<h3> Tela Logada</h3>
+<img src="https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_logada.PNG" alt="Tela logada" width=60%>
+
 <h2> Objetivo do Repositório</h2>
 Este repositório foi criado com o objetivo de acompanhar o meu progresso pessoal no desenvolvimento de aplicações C# e praticar meus conhecimentos adquiridos em relação
 a interfaces, boas práticas em nomeação de variáveis, persistência de dados atravpes do  Dapper, desenvolvimento assincrono e etc..
@@ -26,13 +33,6 @@ A aplicação foi dividida em quatro partes com diferentes responsabilidades:<br
 <dt>Model</dt>
 <dd>Responsável em armazenar as classes utilizadas como models para o mapping do Dapper e armazenar as entidades principais da aplicação.</dd>
 </dl>
-
-<h1>Layouts</h1> 
-<h3>Tela principal</h3>
-<img src="https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_Principal.PNG" alt="Tela principal" width=70%>
-
-<h3> Tela Logada</h3>
-<img src="https://github.com/IgorFigueiredo95/ListaDeCompra_Dapper/blob/master/Assets/Tela_logada.PNG" alt="Tela logada" width=70%>
 
 
 
